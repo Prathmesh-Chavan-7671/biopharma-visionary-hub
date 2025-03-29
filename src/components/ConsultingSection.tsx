@@ -1,16 +1,20 @@
 
 import React from 'react';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const consultingServices = [
-  "R&D Strategy Development",
-  "Technology Assessment & Due Diligence",
-  "Pharmaceutical Formulation Optimization",
-  "Nanomedicine Platform Development",
-  "Regulatory Strategy Consulting",
+  "Biopharmaceutical Product Development & Process Optimization",
+  "Scale-Up & Manufacturing Strategies",
+  "mRNA & Cell Line Development",
+  "Regulatory & Market Strategies",
+  "Technical Problem-Solving",
   "Strategic Partnership Facilitation",
-  "Technical Problem-Solving"
+  "Technology Assessment & Due Diligence"
+];
+
+const industryPartners = [
+  "Cipla", "Abbott", "Reliance", "Serum Institute", "Zydus", "Sun Pharma", "BDR Pharmaceuticals"
 ];
 
 const testimonials = [
@@ -31,7 +35,7 @@ const ConsultingSection = () => {
     <section className="py-16 bg-gradient-to-br from-bio-light-blue via-white to-bio-light-blue" id="consulting">
       <div className="content-container">
         <div className="text-center mb-12">
-          <h2 className="section-heading">Consulting & Industry Projects</h2>
+          <h2 className="section-heading">Industry-Focused Consulting & Expertise</h2>
           <p className="text-lg text-bio-gray max-w-3xl mx-auto">
             Strategic scientific consulting to help companies overcome technical challenges and accelerate innovation in biopharmaceuticals.
           </p>
@@ -39,7 +43,7 @@ const ConsultingSection = () => {
         
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/2">
-            <h3 className="section-subheading">Services Offered</h3>
+            <h3 className="section-subheading">How Dr. Jain Helps the Industry</h3>
             <ul className="space-y-3 mb-8">
               {consultingServices.map((service, index) => (
                 <li key={index} className="flex items-start">
@@ -55,14 +59,26 @@ const ConsultingSection = () => {
                 Schedule a consultation to discuss how Dr. Jain's expertise can address your specific challenges and accelerate your R&D efforts.
               </p>
               <Button className="cta-button">
-                Request a Consultation
+                Unlock Industry Solutions – Contact Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
           
           <div className="md:w-1/2">
-            <h3 className="section-subheading">Client Testimonials</h3>
+            <h3 className="section-subheading">Featured Industry Collaborations</h3>
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              {industryPartners.map((company, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-100 flex items-center justify-center">
+                  <div className="flex items-center space-x-2">
+                    <Building className="h-5 w-5 text-bio-teal" />
+                    <span className="font-medium text-bio-navy">{company}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <h3 className="section-subheading mt-8">Client Testimonials</h3>
             <div className="space-y-6">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
@@ -80,17 +96,6 @@ const ConsultingSection = () => {
                   </div>
                 </div>
               ))}
-            </div>
-            
-            <div className="mt-8">
-              <h3 className="section-subheading">Case Studies</h3>
-              <p className="text-bio-gray mb-4">
-                Explore detailed examples of how Dr. Jain's consulting has delivered measurable value to biopharmaceutical companies.
-              </p>
-              <Button className="secondary-button">
-                View Case Studies
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
           </div>
         </div>

@@ -9,6 +9,8 @@ import StartupSection from '@/components/StartupSection';
 import ConsultingSection from '@/components/ConsultingSection';
 import SpeakingSection from '@/components/SpeakingSection';
 import MediaSection from '@/components/MediaSection';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import ContactSection from '@/components/ContactSection';
 import CtaSection from '@/components/CtaSection';
 
 const Index = () => {
@@ -17,12 +19,14 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <ConsultingSection />
+        <CaseStudiesSection />
         <ResearchSection />
         <CollaborationSection />
         <StartupSection />
-        <ConsultingSection />
         <SpeakingSection />
         <MediaSection />
+        <ContactSection />
         <CtaSection />
       </main>
       <Footer />

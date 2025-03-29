@@ -12,21 +12,21 @@ const Hero = () => {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-bold text-bio-navy sm:text-5xl md:text-6xl">
                 <span className="block">Dr. Ratnesh Jain</span>
-                <span className="block text-bio-teal mt-3">Biopharmaceutical Visionary</span>
+                <span className="block text-bio-teal mt-3">Bridging Science & Industry | Accelerating Biopharmaceutical Innovation</span>
               </h1>
               <p className="mt-3 text-base text-bio-gray sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Bridging academia and industry to pioneer innovations in drug delivery, nanomedicine, and 3D bioprinting for next-generation therapeutics.
+                Helping pharma & biotech companies with cutting-edge R&D, product development, and strategic consulting.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <Button className="cta-button w-full px-8 py-3">
-                    Work with Dr. Jain
+                    Partner with Dr. Jain
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <Button className="secondary-button w-full px-8 py-3">
-                    View Research
+                    Schedule a Consultation
                   </Button>
                 </div>
               </div>
