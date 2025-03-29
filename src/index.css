@@ -92,12 +92,13 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @layer components {
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-bio-navy;
+    @apply text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-bio-light-blue via-bio-teal to-bio-blue;
   }
   
   .section-subheading {
@@ -117,6 +118,230 @@
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-100;
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6;
   }
+  
+  .glassmorphism {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg;
+  }
+  
+  .glassmorphism-blue {
+    @apply bg-bio-blue/10 backdrop-blur-xl border border-bio-blue/20 rounded-lg;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-bio-light-blue via-bio-teal to-bio-blue;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .neon-glow {
+    @apply shadow-[0_0_15px_rgba(14,165,233,0.5)];
+  }
+  
+  .neon-pulse {
+    @apply animate-[pulse_3s_ease-in-out_infinite];
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-tilt {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+  }
+  
+  .hover-underline-animation {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, theme('colors.bio.light-blue'), theme('colors.bio.teal'));
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    transform: translate(20px);
+  }
+  20% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    transform: translate(-20px);
+  }
+  30% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    transform: translate(15px);
+  }
+  40% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+    transform: translate(-15px);
+  }
+  50% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    transform: translate(0);
+  }
+  60% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    transform: translate(20px);
+  }
+  70% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    transform: translate(-15px);
+  }
+  80% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    transform: translate(15px);
+  }
+  90% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    transform: translate(-20px);
+  }
+  100% {
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    transform: translate(20px);
+  }
+}
+
+.animation-glitch:hover {
+  animation: glitch 1s linear both;
+}
+
+.animation-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animation-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out {
+  from { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.animation-enter {
+  animation: fade-in 0.3s ease-out, scale-in 0.2s ease-out;
+}
+
+.animation-exit {
+  animation: fade-out 0.3s ease-out, scale-out 0.2s ease-out;
 }
