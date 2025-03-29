@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { ArrowRight, Rocket, LightBulb, TrendingUp } from 'lucide-react';
+import { ArrowRight, Rocket, Lightbulb, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const startups = [
@@ -109,7 +108,7 @@ const StartupSection = () => {
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   {index === 0 ? (
-                    <LightBulb className="h-6 w-6 text-bio-teal flex-shrink-0 mt-1" />
+                    <Lightbulb className="h-6 w-6 text-bio-teal flex-shrink-0 mt-1" />
                   ) : index === 1 ? (
                     <TrendingUp className="h-6 w-6 text-bio-teal flex-shrink-0 mt-1" />
                   ) : (
