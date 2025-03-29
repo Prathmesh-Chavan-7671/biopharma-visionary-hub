@@ -2,14 +2,14 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { ArrowRight, BookOpen, FileText, Microscope, Dna, Flask, Leaf } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText, Microscope, Dna, Beaker, Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const researchAreas = [
   {
     title: "Advanced Drug Delivery Systems",
     description: "Developing targeted nanocarriers to improve therapeutic efficacy while minimizing side effects for cancer and chronic disease treatments.",
-    icon: Flask,
+    icon: Beaker,
     image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
   },
   {

@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { ArrowRight, Flask, Microscope, Dna } from 'lucide-react';
+import { ArrowRight, Beaker, Microscope, Dna } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const researchAreas = [
   {
     title: "Advanced Drug Delivery Systems",
     description: "Developing targeted nanocarriers to improve therapeutic efficacy while minimizing side effects for cancer and chronic disease treatments.",
-    icon: Flask
+    icon: Beaker
   },
   {
     title: "3D Bioprinting Technologies",
