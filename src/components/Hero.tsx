@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MEDIA_ASSETS } from '@/constants/media';
 import { TYPOGRAPHY, SPACING, COLORS } from '@/constants/styles';
+import '../styles/hexagon.css';
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
