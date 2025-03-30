@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,6 +70,9 @@ export default {
 					'light-teal': '#99F6E4',
 					'gray': '#64748B',
 					'light-gray': '#F1F5F9'
+				},
+				fontFamily: {
+					'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', "Noto Sans", 'sans-serif'],
 				}
 			},
 			borderRadius: {
