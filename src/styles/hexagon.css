@@ -49,3 +49,28 @@
     transform: translateY(-20px) rotate(5deg);
   }
 }
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.glassmorphism-blue {
+  background: rgba(14, 165, 233, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  color: rgb(186, 230, 253);
+  font-weight: 500;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

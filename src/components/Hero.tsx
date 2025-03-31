@@ -16,8 +16,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black">
-      {/* Background Video */}
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-black via-black/95 to-bio-navy/80">
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
@@ -25,24 +25,25 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="object-cover w-full h-full opacity-40"
+          className="object-cover w-full h-full opacity-30"
         >
           <source src={MEDIA_ASSETS.heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-bio-navy/40 to-bio-teal/30" />
       </div>
 
-      {/* Hexagonal Grid Background */}
+      {/* Animated Particles */}
       <div className="absolute inset-0 z-1">
-        <div className="relative w-full h-full">
-          {[...Array(20)].map((_, i) => (
+        <div className="relative w-full h-full overflow-hidden">
+          {[...Array(15)].map((_, i) => (
             <div
               key={i}
               className="absolute hexagon"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`
+                animationDelay: `${Math.random() * 5}s`,
+                opacity: 0.3 + Math.random() * 0.4
               }}
             />
           ))}
@@ -52,52 +53,63 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex items-center min-h-screen">
         <div className={SPACING.container}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className={`${TYPOGRAPHY.h1} text-gradient-primary`}>
-                Prof. Ratnesh Jain
-                <span className="block mt-2 text-white">
-                  Pioneering Biopharmaceutical Innovation
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in">
+              <div className="inline-block px-4 py-1.5 bg-bio-blue/10 backdrop-blur-sm border border-bio-blue/20 rounded-full mb-4">
+                <span className="text-bio-light-blue text-sm font-medium">Professor at IIT Bombay & Harvard Medical School</span>
+              </div>
+              
+              <h1 className={`${TYPOGRAPHY.h1} text-white leading-tight`}>
+                Prof. <span className="text-gradient-primary">Ratnesh Jain</span>
+                <span className="block mt-2 text-3xl md:text-4xl font-semibold text-gray-200">
+                  Pioneering Biopharmaceutical Research & Innovation
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-300 max-w-2xl">
-                Professor at IIT Bombay & Visiting Professor at Harvard Medical School. 
-                Leading expert in drug delivery systems, bioprocess engineering, and AI-accelerated pharmaceutical development.
+              <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+                Leading expert in pharmaceutical sciences, bioprocess engineering, and AI-accelerated drug delivery systems with extensive industry collaboration experience.
               </p>
               
-              <div className="flex flex-wrap gap-4 mt-2">
-                <span className="bg-bio-blue/20 text-bio-light-blue px-3 py-1 rounded-full text-sm border border-bio-blue/30">Pharmaceutics & Biotechnology</span>
-                <span className="bg-bio-teal/20 text-bio-light-teal px-3 py-1 rounded-full text-sm border border-bio-teal/30">Drug Delivery Systems</span>
-                <span className="bg-bio-navy/20 text-gray-300 px-3 py-1 rounded-full text-sm border border-bio-navy/30">IPR & Technology Transfer</span>
+              <div className="flex flex-wrap gap-4 mt-4">
+                <span className="glassmorphism-blue px-4 py-2 rounded-full text-sm">Pharmaceutics & Biotechnology</span>
+                <span className="glassmorphism-blue px-4 py-2 rounded-full text-sm">Drug Delivery Systems</span>
+                <span className="glassmorphism-blue px-4 py-2 rounded-full text-sm">IPR & Technology Transfer</span>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-bio-blue to-bio-teal hover:shadow-[0_0_20px_rgba(14,165,233,0.5)] transition-all duration-300">
-                  <span className="relative z-10 flex items-center">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button className="relative group overflow-hidden rounded-full bg-gradient-to-r from-bio-blue to-bio-teal hover:shadow-[0_0_25px_rgba(14,165,233,0.6)] transition-all duration-300">
+                  <span className="relative z-10 flex items-center font-medium">
                     Collaborate Now
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-bio-teal to-bio-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>
                 
-                <Button variant="outline" className="rounded-xl border-white/20 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+                <Button variant="outline" className="rounded-full border-white/20 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
                   Schedule a Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative hexagon-container">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-bio-blue to-bio-teal rounded-[20%] blur opacity-75 animate-pulse" />
-                <div className="relative hexagon-shape overflow-hidden border border-white/10">
+            <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="relative">
+                {/* Glowing background effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-bio-teal via-bio-blue to-bio-navy opacity-70 blur-lg rounded-full animate-pulse-slow" />
+                
+                {/* Circular frame with gradient border */}
+                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-white/20 p-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-bio-blue/30 via-bio-teal/20 to-transparent rounded-full" />
                   <img 
                     src={MEDIA_ASSETS.profileImage}
                     alt="Prof. Ratnesh Jain" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-full"
                   />
                 </div>
+                
+                {/* Orbital rings */}
+                <div className="absolute inset-0 w-full h-full border-2 border-dashed border-bio-blue/30 rounded-full animate-spin-slow" style={{ animationDuration: '30s' }} />
+                <div className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] border border-bio-teal/20 rounded-full animate-spin-slow" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
               </div>
             </div>
           </div>
