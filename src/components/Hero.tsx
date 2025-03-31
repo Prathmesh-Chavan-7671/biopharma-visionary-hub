@@ -55,17 +55,22 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className={`${TYPOGRAPHY.h1} text-gradient-primary`}>
-                Pioneering Biopharma
+                Prof. Ratnesh Jain
                 <span className="block mt-2 text-white">
-                  Accelerating Industry Growth
+                  Pioneering Biopharmaceutical Innovation
                 </span>
               </h1>
               
               <p className="text-xl text-gray-300 max-w-2xl">
-                Helping pharma & biotech companies with cutting-edge R&D, 
-                product development, and strategic consulting in the era of
-                AI-accelerated discovery.
+                Professor at IIT Bombay & Visiting Professor at Harvard Medical School. 
+                Leading expert in drug delivery systems, bioprocess engineering, and AI-accelerated pharmaceutical development.
               </p>
+              
+              <div className="flex flex-wrap gap-4 mt-2">
+                <span className="bg-bio-blue/20 text-bio-light-blue px-3 py-1 rounded-full text-sm border border-bio-blue/30">Pharmaceutics & Biotechnology</span>
+                <span className="bg-bio-teal/20 text-bio-light-teal px-3 py-1 rounded-full text-sm border border-bio-teal/30">Drug Delivery Systems</span>
+                <span className="bg-bio-navy/20 text-gray-300 px-3 py-1 rounded-full text-sm border border-bio-navy/30">IPR & Technology Transfer</span>
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-bio-blue to-bio-teal hover:shadow-[0_0_20px_rgba(14,165,233,0.5)] transition-all duration-300">
@@ -89,7 +94,7 @@ const Hero = () => {
                 <div className="relative hexagon-shape overflow-hidden border border-white/10">
                   <img 
                     src={MEDIA_ASSETS.profileImage}
-                    alt="Dr. Ratnesh Jain" 
+                    alt="Prof. Ratnesh Jain" 
                     className="w-full h-full object-cover"
                   />
                 </div>
