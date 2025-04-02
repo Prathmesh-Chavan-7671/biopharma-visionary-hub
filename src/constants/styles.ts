@@ -31,4 +31,3 @@ export const INDUSTRY_METRICS = {
   regulatorySuccess: "90% success rate in regulatory approvals",
   commercialImpact: "Generated $50M+ in revenue for partner companies"
 };
-
