@@ -2,32 +2,28 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
-import ResearchSection from '@/components/ResearchSection';
-import CollaborationSection from '@/components/CollaborationSection';
-import StartupSection from '@/components/StartupSection';
-import ConsultingSection from '@/components/ConsultingSection';
-import SpeakingSection from '@/components/SpeakingSection';
-import MediaSection from '@/components/MediaSection';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
-import ContactSection from '@/components/ContactSection';
-import CtaSection from '@/components/CtaSection';
+import HeroIndustry from '@/components/HeroIndustry';
+import IndustryBenefits from '@/components/IndustryBenefits';
+import IndustrySolutions from '@/components/IndustrySolutions';
+import PartnerShowcase from '@/components/PartnerShowcase';
+import ExpertiseAreas from '@/components/ExpertiseAreas';
+import IndustryStats from '@/components/IndustryStats';
+import TestimonialsCarousel from '@/components/TestimonialsCarousel';
+import ContactCTA from '@/components/ContactCTA';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-black">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <main className="flex-grow">
-        <Hero />
-        <ConsultingSection />
-        <CaseStudiesSection />
-        <CollaborationSection />
-        <ResearchSection />
-        <StartupSection />
-        <SpeakingSection />
-        <MediaSection />
-        <ContactSection />
-        <CtaSection />
+        <HeroIndustry />
+        <IndustryBenefits />
+        <IndustrySolutions />
+        <IndustryStats />
+        <PartnerShowcase />
+        <ExpertiseAreas />
+        <TestimonialsCarousel />
+        <ContactCTA />
       </main>
       <Footer />
     </div>
