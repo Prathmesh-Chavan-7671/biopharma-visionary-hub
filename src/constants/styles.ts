@@ -17,6 +17,7 @@ export const COLORS = {
   primary: "from-[#0EA5E9] to-[#0D9488]",
   secondary: "from-[#BAE6FD] to-[#99F6E4]",
   accent: "from-[#1E3A8A] to-[#0EA5E9]",
+  dark: "from-[#0F172A] to-[#1E293B]",
   industry: {
     pharma: "from-[#3b82f6] to-[#1d4ed8]", 
     biotech: "from-[#10b981] to-[#059669]",
@@ -40,5 +41,18 @@ export const ANIMATIONS = {
   hoverElevate: "transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
   pulseGlow: "animate-pulse-slow",
   float: "animate-float",
-  gradientText: "text-transparent bg-clip-text bg-gradient-to-r"
+  gradientText: "text-transparent bg-clip-text bg-gradient-to-r",
+  gradientBorder: "border border-transparent bg-gradient-to-r p-[1px]",
+  glassmorphism: "bg-white/10 backdrop-blur-md border border-white/10",
+  darkGlassmorphism: "bg-slate-900/80 backdrop-blur-md border border-white/10",
+  shimmer: "animate-shimmer bg-gradient-to-r from-transparent via-white/20 to-transparent bg-[length:400%_100%]"
+};
+
+export const EFFECTS = {
+  cardHover: "transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl",
+  buttonGlow: "hover:shadow-lg hover:shadow-blue-500/20",
+  textGradient: "text-transparent bg-clip-text bg-gradient-to-r",
+  borderGradient: "border-gradient",
+  glassmorphism: "bg-white/10 backdrop-blur-md border border-white/10 shadow-xl",
+  neuomorphism: "shadow-[5px_5px_15px_rgba(0,0,0,0.2),-5px_-5px_15px_rgba(255,255,255,0.1)]"
 };
