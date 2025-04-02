@@ -1,7 +1,7 @@
 
 export const MEDIA_ASSETS = {
   heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-scientist-in-laboratory-27797-large.mp4",
-  profileImage: "https://media.licdn.com/dms/image/C5603AQEYffGOKr_MYA/profile-displayphoto-shrink_800_800/0/1517013693864",
+  profileImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.7&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
   industryImages: {
     labResearch: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120",
     drugDelivery: "https://images.unsplash.com/photo-1579165466949-3180a5950056",

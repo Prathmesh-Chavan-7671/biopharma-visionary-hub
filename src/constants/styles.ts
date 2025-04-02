@@ -31,3 +31,14 @@ export const INDUSTRY_METRICS = {
   regulatorySuccess: "90% success rate in regulatory approvals",
   commercialImpact: "Generated $50M+ in revenue for partner companies"
 };
+
+export const ANIMATIONS = {
+  fadeIn: "transition-all duration-700 ease-out opacity-0 transform translate-y-8",
+  slideIn: "transition-all duration-700 ease-out opacity-0 transform -translate-x-8",
+  scaleIn: "transition-all duration-500 ease-out opacity-0 transform scale-95",
+  hoverScale: "transform transition-transform duration-300 hover:scale-105",
+  hoverElevate: "transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
+  pulseGlow: "animate-pulse-slow",
+  float: "animate-float",
+  gradientText: "text-transparent bg-clip-text bg-gradient-to-r"
+};
