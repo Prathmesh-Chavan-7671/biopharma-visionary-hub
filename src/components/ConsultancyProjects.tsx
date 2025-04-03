@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { ArrowRight, Building, FileCheck, Beaker, Microscope, Flask, Dna } from 'lucide-react';
+import { ArrowRight, Building, FileCheck, Beaker, Microscope, FlaskConical, Dna } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { TYPOGRAPHY, SPACING } from '@/constants/styles';
@@ -16,7 +15,7 @@ const consultancyProjects = [
     title: "Downstream Bioprocessing",
     agency: "Advy Chemicals",
     description: "Streamlined purification workflows and enhanced yield in biopharmaceutical manufacturing processes.",
-    icon: Flask
+    icon: FlaskConical
   },
   {
     title: "Probiotics Study",
