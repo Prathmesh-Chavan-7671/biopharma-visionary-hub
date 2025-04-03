@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Check, ArrowRight, Beaker, ChartBar, FileCertificate } from 'lucide-react';
+import { Check, ArrowRight, Beaker, ChartBar, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TYPOGRAPHY, SPACING } from '@/constants/styles';
 
@@ -123,7 +122,7 @@ const IndustryBenefits = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-sky-600/20 to-sky-800/20 rounded-xl transform -rotate-1 -z-10"></div>
             <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-8 h-full flex flex-col">
               <div className="w-14 h-14 bg-gradient-to-br from-sky-500/20 to-sky-600/20 rounded-xl flex items-center justify-center mb-6">
-                <FileCertificate className="text-sky-400 h-7 w-7" />
+                <FileCheck className="text-sky-400 h-7 w-7" />
               </div>
               
               <h3 className="text-2xl font-semibold text-white mb-4">Regulatory & Compliance</h3>
