@@ -6,6 +6,10 @@ import HeroIndustry from '@/components/HeroIndustry';
 import ResearchSection from '@/components/ResearchSection';
 import SpeakingSection from '@/components/SpeakingSection';
 import ContactCTA from '@/components/ContactCTA';
+import IndustrySolutions from '@/components/IndustrySolutions';
+import CollaborationSection from '@/components/CollaborationSection';
+import IndustryBenefits from '@/components/IndustryBenefits';
+import StartupSection from '@/components/StartupSection';
 
 const Index = () => {
   return (
@@ -13,7 +17,11 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroIndustry />
+        <IndustryBenefits />
+        <IndustrySolutions />
         <ResearchSection />
+        <CollaborationSection />
+        <StartupSection />
         <SpeakingSection />
         <ContactCTA />
       </main>

@@ -6,7 +6,7 @@ import { TYPOGRAPHY, SPACING } from '@/constants/styles';
 
 const IndustrySolutions = () => {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-gray-50 py-16 md:py-24">
       <div className={SPACING.container}>
         <div className="text-center mb-16">
           <h2 className={`${TYPOGRAPHY.h2} text-bio-navy mb-4`}>
