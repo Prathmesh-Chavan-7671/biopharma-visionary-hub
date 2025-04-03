@@ -10,6 +10,9 @@ import ExpertiseAreas from '@/components/ExpertiseAreas';
 import IndustryStats from '@/components/IndustryStats';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import ContactCTA from '@/components/ContactCTA';
+import ConsultancyProjects from '@/components/ConsultancyProjects';
+import StartupSection from '@/components/StartupSection';
+import CollaborationSection from '@/components/CollaborationSection';
 import { ANIMATIONS } from '@/constants/styles';
 
 const Index = () => {
@@ -73,6 +76,21 @@ const Index = () => {
         <section className="animate-on-scroll relative">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-slate-800 -z-10"></div>
           <IndustryStats />
+        </section>
+        
+        <section className="animate-on-scroll relative">
+          <div className="absolute inset-0 bg-slate-800/50 backdrop-blur-sm -z-10"></div>
+          <ConsultancyProjects />
+        </section>
+        
+        <section className="animate-on-scroll relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900 -z-10"></div>
+          <StartupSection />
+        </section>
+        
+        <section className="animate-on-scroll relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-slate-800 -z-10"></div>
+          <CollaborationSection />
         </section>
         
         <section className="animate-on-scroll relative">
