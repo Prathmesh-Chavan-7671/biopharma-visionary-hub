@@ -1,229 +1,205 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Sparkles, BarChart2, Clock } from 'lucide-react';
+import { ArrowRight, Award, BarChart3, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { TYPOGRAPHY, SPACING, ANIMATIONS } from '@/constants/styles';
+import { TYPOGRAPHY, SPACING } from '@/constants/styles';
 import { MEDIA_ASSETS } from '@/constants/media';
 
 const HeroIndustry = () => {
-  const statsRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
+    // Slow down video playback for better aesthetics
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.7;
+    }
+    
     // Set loaded state after a brief delay for entrance animations
     const timer = setTimeout(() => setIsLoaded(true), 300);
     
-    // Animation for stats elements
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    if (statsRef.current) {
-      const statItems = statsRef.current.querySelectorAll('.stat-item');
-      statItems.forEach((item) => observer.observe(item));
-    }
-    
-    return () => {
-      clearTimeout(timer);
-      observer.disconnect();
-    };
+    return () => clearTimeout(timer);
   }, []);
 
-  // Mouse parallax effect
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // Parallax effect
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
   
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
-    const moveX = (clientX - window.innerWidth / 2) / 25;
-    const moveY = (clientY - window.innerHeight / 2) / 25;
-    setMousePosition({ x: moveX, y: moveY });
-  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div 
-      className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 min-h-[90vh]"
-      onMouseMove={handleMouseMove}
-    >
-      {/* Animated background elements */}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxwYXR0ZXJuIHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9InBhdHRlcm4tZ3JpZCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+CiAgICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSI0MCIgeTI9IjAiIHN0cm9rZT0icmdiYSgxNCwgMTY1LCAyMzMsIDAuMDgpIiBzdHJva2Utd2lkdGg9IjAuNSIgLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSI0MCIgc3Ryb2tlPSJyZ2JhKDEzLCAxNDgsIDEzNiwgMC4wOCkiIHN0cm9rZS13aWR0aD0iMC41IiAvPgogIDwvcGF0dGVybj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4tZ3JpZCkiIC8+Cjwvc3ZnPg==')] opacity-30"></div>
-        
-        {/* Video background */}
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="object-cover w-full h-full opacity-30 scale-110"
+          className="object-cover w-full h-full"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-laboratory-view-close-up-of-flask-13505-large.mp4" type="video/mp4" />
+          <source src={MEDIA_ASSETS.heroVideo} type="video/mp4" />
         </video>
-        
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/30 to-teal-900/50 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/90"></div>
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-bio-light-blue/50"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${5 + Math.random() * 10}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-              opacity: 0.2 + Math.random() * 0.5,
-              transform: `scale(${0.5 + Math.random() * 1.5})`,
-              filter: `blur(${Math.random() * 2}px)`
-            }}
-          />
-        ))}
-      </div>
+      {/* Subtle animated grid pattern */}
+      <div className="absolute inset-0 z-1 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDYwIEwgNjAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTSA2MCAwIEwgNjAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
 
       {/* Hero Content */}
-      <div className={`relative z-10 ${SPACING.section} flex items-center min-h-[90vh]`}>
+      <div className="relative z-10 flex flex-col justify-center items-center min-h-screen py-16 md:py-0">
         <div className={SPACING.container}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className={`space-y-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center">
+            <div className="lg:col-span-6 space-y-6 md:space-y-8">
               <div 
-                className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-bio-blue/20 to-bio-teal/20 border border-bio-teal/20 shadow-lg shadow-bio-blue/10"
+                className={`transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
+                style={{ transitionDelay: '200ms' }}
               >
-                <span className="text-bio-light-blue text-sm font-medium flex items-center">
-                  <Sparkles className="h-3.5 w-3.5 mr-2 animate-pulse text-bio-light-blue" />
-                  Professor at IIT Bombay & Harvard Medical School
-                </span>
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                  <span className="text-blue-400 text-sm font-medium">Leading Industry Collaborations</span>
+                </div>
+                
+                <h1 className={`${TYPOGRAPHY.h1} mb-4 text-gradient`}>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-200">
+                    Prof. Ratnesh Jain
+                  </span>
+                </h1>
+                
+                <h2 className="text-3xl font-light text-gray-300 mb-6">
+                  Pioneering Pharmaceutical 
+                  <span className="text-blue-300 font-medium"> Research & Innovation</span>
+                </h2>
+                
+                <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+                  Bridging academic excellence and industry challenges with over two decades of 
+                  pharmaceutical research, technological innovation, and successful collaborations.
+                </p>
               </div>
               
-              <h1 className={`${TYPOGRAPHY.h1} tracking-tighter leading-none`}>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-bio-light-blue to-bio-light-teal drop-shadow-md">
-                  Accelerating <span className="font-extrabold italic">Pharmaceutical</span> & <span className="font-extrabold italic">Biotech</span> Innovation
-                </span>
-              </h1>
-              
-              <h2 className="text-2xl md:text-3xl font-medium text-white/90 transform transition-all duration-500 hover:text-bio-light-blue">
-                Prof. Ratnesh Jain <span className="text-bio-light-teal">—</span> Industry Collaboration Specialist
-              </h2>
-              
-              <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-                Partner with a globally recognized expert to solve complex technical challenges, 
-                reduce R&D costs, and accelerate your product development pipeline.
-              </p>
-              
-              <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 transition-all duration-1000" style={{animationDelay: "300ms"}}>
-                <div className="stat-item bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col transition-all duration-300 hover:bg-white/10 hover:shadow-xl hover:shadow-bio-blue/10 group">
-                  <div className="flex items-center">
-                    <BarChart2 className="h-5 w-5 text-bio-light-blue mr-2 group-hover:text-bio-light-teal transition-colors" />
-                    <span className="text-bio-light-blue font-bold text-xl group-hover:text-bio-light-teal transition-colors">30%</span>
+              <div 
+                className={`grid grid-cols-3 gap-4 transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: '400ms' }}
+              >
+                <div className="relative group overflow-hidden rounded-xl p-4 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all border border-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10">
+                    <Award className="h-6 w-6 text-blue-400 mb-3" />
+                    <p className="text-2xl font-bold text-white">20+</p>
+                    <p className="text-sm text-gray-400">Years Experience</p>
                   </div>
-                  <span className="mt-1 text-gray-300 text-sm">R&D Cost Reduction</span>
                 </div>
-                <div className="stat-item bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col transition-all duration-300 hover:bg-white/10 hover:shadow-xl hover:shadow-bio-teal/10 group">
-                  <div className="flex items-center">
-                    <Clock className="h-5 w-5 text-bio-light-teal mr-2 group-hover:text-bio-light-blue transition-colors" />
-                    <span className="text-bio-light-teal font-bold text-xl group-hover:text-bio-light-blue transition-colors">8-12</span>
+                
+                <div className="relative group overflow-hidden rounded-xl p-4 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all border border-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10">
+                    <BarChart3 className="h-6 w-6 text-blue-400 mb-3" />
+                    <p className="text-2xl font-bold text-white">50+</p>
+                    <p className="text-sm text-gray-400">Industry Projects</p>
                   </div>
-                  <span className="mt-1 text-gray-300 text-sm">Months Faster to Market</span>
                 </div>
-                <div className="stat-item bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col transition-all duration-300 hover:bg-white/10 hover:shadow-xl hover:shadow-bio-blue/10 group">
-                  <div className="flex items-center">
-                    <Sparkles className="h-5 w-5 text-bio-light-blue mr-2 group-hover:text-bio-light-teal transition-colors" />
-                    <span className="text-bio-light-blue font-bold text-xl group-hover:text-bio-light-teal transition-colors">90%</span>
+                
+                <div className="relative group overflow-hidden rounded-xl p-4 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all border border-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10">
+                    <Target className="h-6 w-6 text-blue-400 mb-3" />
+                    <p className="text-2xl font-bold text-white">90%</p>
+                    <p className="text-sm text-gray-400">Success Rate</p>
                   </div>
-                  <span className="mt-1 text-gray-300 text-sm">Regulatory Success Rate</span>
                 </div>
               </div>
               
-              <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <div 
+                className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: '600ms' }}
+              >
                 <Button 
-                  className="relative overflow-hidden group bg-gradient-to-r from-bio-blue to-bio-teal hover:from-bio-teal hover:to-bio-blue text-white px-6 py-6 rounded-lg text-base font-medium transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-bio-blue/30"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-6 rounded-lg group overflow-hidden relative"
                 >
-                  <span className="absolute inset-0 w-0 bg-white/10 group-hover:w-full transform skew-x-12 transition-all duration-700 -z-10"></span>
-                  Schedule a Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <span className="absolute inset-0 w-0 bg-blue-500 transition-all duration-500 ease-out group-hover:w-full"></span>
+                  <span className="relative z-10 flex items-center">
+                    Schedule a Consultation
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </Button>
+                
                 <Button 
                   variant="outline" 
-                  className="relative overflow-hidden group border-bio-light-teal/50 text-bio-light-teal hover:text-white px-6 py-6 rounded-lg text-base font-medium transform transition-all duration-300 hover:border-bio-light-teal/80"
+                  className="border-blue-500/30 text-blue-400 hover:text-blue-300 hover:border-blue-400/50 px-6 py-6 rounded-lg"
                 >
-                  <span className="absolute inset-0 w-0 bg-gradient-to-r from-bio-teal/80 to-bio-blue/80 group-hover:w-full transform skew-x-12 transition-all duration-700 -z-10"></span>
-                  View Industry Solutions
+                  <span>View Research Portfolio</span>
                 </Button>
               </div>
             </div>
             
-            <div className="relative hidden lg:block">
-              {/* Animated glow effect */}
-              <div 
-                className="absolute -z-10 inset-0 bg-gradient-to-r from-bio-light-blue/20 to-bio-light-teal/20 rounded-full blur-3xl animate-pulse-slow"
-                style={{
-                  transform: `translate3d(${mousePosition.x * -1}px, ${mousePosition.y * -1}px, 0)`,
-                  transition: 'transform 0.2s ease-out'
-                }}
-              ></div>
-              
-              {/* Profile image with modern styling */}
-              <div 
-                className={`relative z-10 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{
-                  transform: `translate3d(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px, 0)`,
-                  transition: 'transform 0.2s ease-out'
-                }}
-              >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-bio-blue to-bio-teal rounded-2xl blur opacity-30 animate-pulse-slow"></div>
-                <div className="relative bg-black/40 backdrop-blur-lg p-2 rounded-2xl shadow-2xl border border-white/10">
+            <div className="lg:col-span-6 flex justify-center lg:justify-end transition-all duration-1000 ease-out"
+              style={{
+                transitionDelay: '800ms',
+                opacity: isLoaded ? 1 : 0,
+                transform: isLoaded ? 'translateY(0)' : 'translateY(40px)'
+              }}
+            >
+              <div className="relative">
+                {/* Decorative elements */}
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 animate-pulse-slow blur-xl"></div>
+                
+                {/* Profile Image Container */}
+                <div className="relative rounded-2xl overflow-hidden backdrop-blur-sm border border-white/20 p-1.5 shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 z-0"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.7&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                    src={MEDIA_ASSETS.profileImage}
                     alt="Prof. Ratnesh Jain" 
-                    className="w-full rounded-xl shadow-inner relative z-10"
+                    className="relative z-10 w-72 md:w-96 rounded-xl"
+                    style={{ 
+                      transform: `translateY(${offsetY * 0.1}px)`,
+                      transition: 'transform 0.1s ease-out'
+                    }}
                   />
                   
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-bio-light-blue opacity-70 rounded-tl-lg"></div>
-                  <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-bio-light-teal opacity-70 rounded-br-lg"></div>
+                  {/* Corner accents */}
+                  <div className="absolute top-0 right-0 h-10 w-10 border-t-2 border-r-2 border-blue-400/50 rounded-tr-lg"></div>
+                  <div className="absolute bottom-0 left-0 h-10 w-10 border-b-2 border-l-2 border-purple-400/50 rounded-bl-lg"></div>
                 </div>
-              </div>
-              
-              {/* Floating badges */}
-              <div 
-                className={`absolute -bottom-4 -right-4 bg-slate-900/80 backdrop-blur-lg shadow-lg shadow-bio-blue/10 rounded-lg p-4 max-w-xs border border-white/10 transition-all duration-1000 hover:scale-110 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} 
-                style={{animationDelay: "400ms", transform: `translate3d(${mousePosition.x * -0.3}px, ${mousePosition.y * -0.3}px, 0)`, transition: 'transform 0.3s ease-out'}}
-              >
-                <p className="text-bio-light-blue font-semibold">Industry Experience</p>
-                <div className="flex mt-2 space-x-1">
-                  <img src={MEDIA_ASSETS.partnerLogos.cipla} alt="Cipla" className="h-8 w-8 rounded shadow-sm backdrop-blur-sm bg-white/90 p-1" />
-                  <img src={MEDIA_ASSETS.partnerLogos.abbott} alt="Abbott" className="h-8 w-8 rounded shadow-sm backdrop-blur-sm bg-white/90 p-1" />
-                  <img src={MEDIA_ASSETS.partnerLogos.sunpharma} alt="Sun Pharma" className="h-8 w-8 rounded shadow-sm backdrop-blur-sm bg-white/90 p-1" />
-                  <img src={MEDIA_ASSETS.partnerLogos.gsk} alt="GSK" className="h-8 w-8 rounded shadow-sm backdrop-blur-sm bg-white/90 p-1" />
-                  <div className="h-8 w-8 rounded bg-white/10 backdrop-blur-sm flex items-center justify-center text-sm text-bio-light-blue font-bold border border-bio-light-blue/30">+12</div>
+                
+                {/* Floating achievement badge */}
+                <div className="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-lg rounded-lg p-3 border border-white/20 shadow-lg">
+                  <div className="flex items-center space-x-2">
+                    <div className="bg-blue-500/20 p-2 rounded-full">
+                      <Award className="h-5 w-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-blue-300 font-medium">Harvard Medical School</p>
+                      <p className="text-xs text-white">Visiting Professor</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Scientific data element */}
-              <div 
-                className={`absolute -top-4 -left-10 bg-slate-900/80 backdrop-blur-lg shadow-lg shadow-bio-teal/10 rounded-lg p-3 border border-white/10 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{animationDelay: "600ms", transform: `translate3d(${mousePosition.x * -0.2}px, ${mousePosition.y * -0.2}px, 0)`, transition: 'transform 0.3s ease-out'}}
-              >
-                <p className="text-bio-light-teal text-xs font-medium">Publication Impact</p>
-                <p className="text-white font-bold text-lg">h-index: 48</p>
+                
+                {/* Company logos interactive element */}
+                <div className="absolute -top-6 -left-6 bg-white/10 backdrop-blur-lg rounded-lg p-3 border border-white/20 shadow-lg">
+                  <p className="text-xs text-blue-300 font-medium mb-1">Industry Partners</p>
+                  <div className="flex items-center space-x-1">
+                    <img src={MEDIA_ASSETS.partnerLogos.cipla} className="h-6 w-6 rounded-full bg-white p-0.5" alt="Cipla" />
+                    <img src={MEDIA_ASSETS.partnerLogos.pfizer} className="h-6 w-6 rounded-full bg-white p-0.5" alt="Pfizer" />
+                    <img src={MEDIA_ASSETS.partnerLogos.gsk} className="h-6 w-6 rounded-full bg-white p-0.5" alt="GSK" />
+                    <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-white/10 text-xs text-white font-medium">+12</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      {/* Scrolling indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex justify-center">
-        <div className="animate-bounce bg-white/10 backdrop-blur-md p-2 w-10 h-10 ring-1 ring-bio-light-teal/20 shadow-lg shadow-bio-blue/5 rounded-full flex items-center justify-center border border-white/10">
-          <svg className="w-6 h-6 text-bio-light-blue" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex justify-center">
+          <div className="animate-bounce w-10 h-10 rounded-full border border-white/20 backdrop-blur-sm flex items-center justify-center">
+            <svg className="w-4 h-4 text-blue-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
         </div>
       </div>
     </div>

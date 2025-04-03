@@ -1,16 +1,16 @@
 
 export const MEDIA_ASSETS = {
-  heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-laboratory-view-close-up-of-flask-13505-large.mp4",
-  secondaryVideo: "https://assets.mixkit.co/videos/preview/mixkit-scientist-in-laboratory-27797-large.mp4",
-  profileImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.7&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+  heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-scientist-working-with-microscope-in-laboratory-10459-large.mp4",
+  secondaryVideo: "https://assets.mixkit.co/videos/preview/mixkit-medical-research-team-work-32739-large.mp4",
+  profileImage: "https://images.unsplash.com/photo-1577455436570-331a3a1d1723?ixlib=rb-4.0.7&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
   industryImages: {
-    labResearch: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
-    drugDelivery: "https://images.unsplash.com/photo-1579165466949-3180a5950056?auto=format&fit=crop&w=1600&q=80",
-    bioprocess: "https://images.unsplash.com/photo-1579165945316-d2e1615fa90f?auto=format&fit=crop&w=1600&q=80",
-    stability: "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?auto=format&fit=crop&w=1600&q=80",
-    analytics: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80",
-    teamwork: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80",
-    biotech: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1600&q=80"
+    labResearch: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1600&q=80",
+    drugDelivery: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=80",
+    bioprocess: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80",
+    stability: "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=1600&q=80",
+    analytics: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1600&q=80",
+    teamwork: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+    biotech: "https://images.unsplash.com/photo-1582560475175-829e9d959d51?auto=format&fit=crop&w=1600&q=80"
   },
   partnerLogos: {
     cipla: "https://logo.clearbit.com/cipla.com",

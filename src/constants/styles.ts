@@ -14,9 +14,9 @@ export const SPACING = {
 };
 
 export const COLORS = {
-  primary: "from-[#0EA5E9] to-[#0D9488]",
-  secondary: "from-[#BAE6FD] to-[#99F6E4]",
-  accent: "from-[#1E3A8A] to-[#0EA5E9]",
+  primary: "from-[#3b82f6] to-[#1d4ed8]",
+  secondary: "from-[#8b5cf6] to-[#6366f1]",
+  accent: "from-[#14b8a6] to-[#0d9488]",
   dark: "from-[#0F172A] to-[#1E293B]",
   industry: {
     pharma: "from-[#3b82f6] to-[#1d4ed8]", 

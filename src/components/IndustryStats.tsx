@@ -1,99 +1,185 @@
 
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { TYPOGRAPHY, SPACING, INDUSTRY_METRICS } from '@/constants/styles';
 
 const IndustryStats = () => {
+  const [animated, setAnimated] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (statsRef.current) {
+        const rect = statsRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.75;
+        
+        if (isVisible && !animated) {
+          setAnimated(true);
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [animated]);
+
   return (
-    <section className="bg-gradient-to-br from-bio-navy to-black py-16 md:py-24 relative overflow-hidden">
-      {/* Background circles */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-bio-blue/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-bio-teal/10 rounded-full filter blur-3xl"></div>
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full filter blur-[100px]"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 rounded-full filter blur-[100px]"></div>
       
       <div className={SPACING.container}>
         <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4">
+            <span className="text-blue-400 text-sm font-medium">Proven Track Record</span>
+          </div>
           <h2 className={`${TYPOGRAPHY.h2} text-white mb-4`}>
-            <span className="text-bio-light-blue">Measurable</span> Industry Impact
+            <span className="text-blue-400">Data-Driven</span> Industry Impact
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Dr. Jain's collaborations have delivered significant ROI for pharmaceutical and biotech partners.
+            Prof. Jain's academic-industry collaborations have delivered significant ROI for pharmaceutical and biotech partners.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-bio-light-blue/10 mb-6">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 6V12L16 14" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="text-4xl font-bold text-white mb-2">8-12</div>
-            <div className="text-2xl font-light text-white mb-3">Months</div>
-            <p className="text-gray-300">Accelerated time-to-market for pharmaceutical products</p>
-          </div>
+        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <StatCard
+            title="Time to Market"
+            value="8-12"
+            suffix="months"
+            description="Accelerated development timelines for innovative pharmaceuticals"
+            delay={0}
+            isAnimated={animated}
+            gradient="from-blue-500/20 to-blue-600/20"
+            iconGradient="from-blue-500 to-blue-600"
+          />
           
-          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-bio-light-teal/10 mb-6">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 3H8C6.89543 3 6 3.89543 6 5V19C6 20.1046 6.89543 21 8 21H16C17.1046 21 18 20.1046 18 19V5C18 3.89543 17.1046 3 16 3Z" stroke="#99F6E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M9 7H15" stroke="#99F6E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M9 11H15" stroke="#99F6E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M9 15H13" stroke="#99F6E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="text-4xl font-bold text-white mb-2">30-40%</div>
-            <div className="text-2xl font-light text-white mb-3">Reduction</div>
-            <p className="text-gray-300">Lower R&D costs through optimized development processes</p>
-          </div>
+          <StatCard
+            title="R&D Cost Reduction"
+            value="30-40"
+            suffix="%"
+            description="Lower research and development costs through optimized processes"
+            delay={200}
+            isAnimated={animated}
+            gradient="from-indigo-500/20 to-indigo-600/20" 
+            iconGradient="from-indigo-500 to-indigo-600"
+          />
           
-          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-bio-blue/10 mb-6">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="text-4xl font-bold text-white mb-2">90%</div>
-            <div className="text-2xl font-light text-white mb-3">Success Rate</div>
-            <p className="text-gray-300">First-time regulatory approval for collaborative projects</p>
-          </div>
+          <StatCard
+            title="Success Rate"
+            value="90"
+            suffix="%"
+            description="First-time regulatory approval for collaborative projects"
+            delay={400}
+            isAnimated={animated}
+            gradient="from-sky-500/20 to-sky-600/20"
+            iconGradient="from-sky-500 to-sky-600"
+          />
+        </div>
+        
+        <div className="mt-16 backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-indigo-600/5"></div>
           
-          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-bio-teal/10 mb-6">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8V16M12 11V16M8 14V16M3 8L12 4L21 8L12 12L3 8Z" stroke="#99F6E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M3 8V16L12 20L21 16V8" stroke="#99F6E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+          <div className="relative z-10">
+            <h3 className="text-2xl font-semibold text-white mb-6 text-center">Delivering Measurable Results</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center bg-white/5 rounded-lg p-6 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 mb-4">
+                  <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <p className="text-3xl font-bold text-white mb-1">25-60%</p>
+                <p className="text-gray-400 text-center">Improved manufacturing yield</p>
+              </div>
+              
+              <div className="flex flex-col items-center bg-white/5 rounded-lg p-6 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 mb-4">
+                  <svg className="w-6 h-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p className="text-3xl font-bold text-white mb-1">$50M+</p>
+                <p className="text-gray-400 text-center">Revenue generated for partners</p>
+              </div>
+              
+              <div className="flex flex-col items-center bg-white/5 rounded-lg p-6 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-sky-500/20 to-sky-600/20 mb-4">
+                  <svg className="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <p className="text-3xl font-bold text-white mb-1">15+</p>
+                <p className="text-gray-400 text-center">Joint patents developed</p>
+              </div>
             </div>
-            <div className="text-4xl font-bold text-white mb-2">25-60%</div>
-            <div className="text-2xl font-light text-white mb-3">Improvement</div>
-            <p className="text-gray-300">Manufacturing yield enhancement through process optimization</p>
-          </div>
-          
-          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-bio-light-blue/10 mb-6">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 9V14M12 21.4L5.2 17.9C5.07389 17.8389 4.9732 17.7345 4.90478 17.6011C4.83637 17.4677 4.80392 17.3116 4.81106 17.155L5.51106 5.695C5.52106 5.46 5.64606 5.245 5.85106 5.115L12.0011 1.875C12.0549 1.84494 12.1129 1.82468 12.1726 1.81535C12.2322 1.80603 12.2926 1.80778 12.3511 1.82C12.4111 1.83322 12.4681 1.85967 12.5176 1.89705C12.5672 1.93443 12.6082 1.98167 12.6371 2.036L16.8371 8.536C16.9066 8.642 16.9451 8.7691 16.9474 8.89953C16.9498 9.02997 16.9158 9.15849 16.8501 9.268L12.0001 16.068" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M19 10V15.5C19 15.5996 18.9687 15.6976 18.9098 15.7812C18.8508 15.8649 18.7665 15.9302 18.669 15.968L16 17" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="text-4xl font-bold text-white mb-2">$50M+</div>
-            <div className="text-2xl font-light text-white mb-3">Revenue</div>
-            <p className="text-gray-300">Generated for partner companies through collaboration</p>
-          </div>
-          
-          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-bio-light-blue/10 mb-6">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 17V15M12 17V13M15 17V11M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H14.5858C14.851 3 15.1054 3.10536 15.2929 3.29289L18.7071 6.70711C18.8946 6.89464 19 7.149 19 7.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="#BAE6FD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="text-4xl font-bold text-white mb-2">15+</div>
-            <div className="text-2xl font-light text-white mb-3">Patents</div>
-            <p className="text-gray-300">Joint intellectual property developed with industry partners</p>
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+interface StatCardProps {
+  title: string;
+  value: string;
+  suffix: string;
+  description: string;
+  delay: number;
+  isAnimated: boolean;
+  gradient: string;
+  iconGradient: string;
+}
+
+const StatCard = ({ title, value, suffix, description, delay, isAnimated, gradient, iconGradient }: StatCardProps) => {
+  const [count, setCount] = useState(0);
+  const valueNum = parseInt(value);
+  const duration = 2000; // animation duration in ms
+  const incrementInterval = 30; // update interval in ms
+  
+  useEffect(() => {
+    if (isAnimated) {
+      let start = 0;
+      const end = valueNum;
+      const totalSteps = duration / incrementInterval;
+      const incrementAmount = end / totalSteps;
+      
+      setTimeout(() => {
+        const timer = setInterval(() => {
+          start += incrementAmount;
+          if (start >= end) {
+            setCount(end);
+            clearInterval(timer);
+          } else {
+            setCount(Math.floor(start));
+          }
+        }, incrementInterval);
+        
+        return () => clearInterval(timer);
+      }, delay);
+    }
+  }, [isAnimated, valueNum, delay]);
+
+  return (
+    <div className={`relative rounded-xl overflow-hidden bg-${gradient} p-8 transition-all transform hover:-translate-y-1 hover:shadow-lg duration-300`}>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5"></div>
+      <div className="relative z-10">
+        <div className={`inline-block p-4 rounded-xl bg-gradient-to-br ${iconGradient} bg-opacity-10 mb-6`}>
+          <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+
+        <h3 className="text-lg font-medium text-gray-300 mb-3">{title}</h3>
+        <div className="flex items-baseline">
+          <span className="text-4xl font-bold text-white">{isAnimated ? count : 0}</span>
+          <span className="text-xl font-medium text-gray-300 ml-1">{suffix}</span>
+        </div>
+        <p className="mt-4 text-gray-400">{description}</p>
+      </div>
+    </div>
   );
 };
 
