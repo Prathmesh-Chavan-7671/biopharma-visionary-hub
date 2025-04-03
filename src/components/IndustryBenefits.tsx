@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Check, ArrowRight, Beaker, ChartBar, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
