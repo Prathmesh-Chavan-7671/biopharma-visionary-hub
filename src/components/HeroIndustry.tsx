@@ -66,7 +66,7 @@ const HeroIndustry = () => {
                 
                 <h1 className={`${TYPOGRAPHY.h1} mb-4 text-gradient`}>
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-200">
-                    Prof. Ratnesh Jain
+                    Dr. Ratnesh Jain
                   </span>
                 </h1>
                 
@@ -152,7 +152,7 @@ const HeroIndustry = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 z-0"></div>
                   <img 
                     src={MEDIA_ASSETS.profileImage}
-                    alt="Prof. Ratnesh Jain" 
+                    alt="Dr. Ratnesh Jain" 
                     className="relative z-10 w-72 md:w-96 rounded-xl"
                     style={{ 
                       transform: `translateY(${offsetY * 0.1}px)`,
