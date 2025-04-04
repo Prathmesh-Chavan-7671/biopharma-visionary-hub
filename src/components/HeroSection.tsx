@@ -84,7 +84,7 @@ const HeroSection = () => {
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
                 Dr. Ratnesh Jain
                 <span className="block mt-3 text-3xl md:text-4xl font-light text-gray-300">
-                  Transforming <span className="text-bio-teal font-medium">Industry</span> Through <span className="text-bio-light-blue font-medium">Science</span>
+                  Innovating Biopharmaceutical Solutions  Empowering the Next Generation <span className="text-bio-teal font-medium">Empowering the Next Generation</span> 
                 </span>
               </h1>
               
