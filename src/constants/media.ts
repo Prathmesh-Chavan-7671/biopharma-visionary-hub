@@ -1,7 +1,7 @@
 export const MEDIA_ASSETS = {
   heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-scientist-working-with-microscope-in-laboratory-10459-large.mp4",
   secondaryVideo: "https://assets.mixkit.co/videos/preview/mixkit-medical-research-team-work-32739-large.mp4",
-  profileImage: "https://images.unsplash.com/photo-1577455436570-331a3a1d1723?ixlib=rb-4.0.7&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+  profileImage: "/images/ratnesh-jain.jpg",
   industryImages: {
     labResearch: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1600&q=80",
     drugDelivery: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=80",
