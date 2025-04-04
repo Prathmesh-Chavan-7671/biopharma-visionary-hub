@@ -1,4 +1,3 @@
-
 export const MEDIA_ASSETS = {
   heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-scientist-working-with-microscope-in-laboratory-10459-large.mp4",
   secondaryVideo: "https://assets.mixkit.co/videos/preview/mixkit-medical-research-team-work-32739-large.mp4",
