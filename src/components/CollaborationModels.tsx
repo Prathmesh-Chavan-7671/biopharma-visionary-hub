@@ -95,7 +95,11 @@ const CollaborationModels = () => {
             <div className="bg-black/40 backdrop-blur-md border border-bio-blue/20 rounded-xl p-8 h-full">
               <div className="flex items-center space-x-4 mb-6">
                 <div className={`h-12 w-12 rounded-lg bg-gradient-to-br ${tabs[activeTab].color} flex items-center justify-center`}>
-                  <tabs[activeTab].icon className="h-6 w-6 text-white" />
+                  {/* The issue was here - fixing the syntax for dynamic component rendering */}
+                  {(() => {
+                    const IconComponent = tabs[activeTab].icon;
+                    return <IconComponent className="h-6 w-6 text-white" />;
+                  })()}
                 </div>
                 <h3 className="text-2xl font-semibold text-white">{tabs[activeTab].title}</h3>
               </div>
