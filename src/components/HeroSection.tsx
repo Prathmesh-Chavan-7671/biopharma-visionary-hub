@@ -158,11 +158,11 @@ const HeroSection = () => {
                   
                   {/* Stats cards positioned around the image */}
                   <div className="absolute -top-6 -left-6 bg-black/70 backdrop-blur-md border border-white/10 rounded-lg p-3 shadow-lg">
-                    <p className="text-bio-light-blue font-semibold">130+ Publications</p>
+                    <p className="text-bio-light-blue font-semibold">Entrepreneur </p>
                   </div>
                   
                   <div className="absolute -bottom-6 -right-6 bg-black/70 backdrop-blur-md border border-white/10 rounded-lg p-3 shadow-lg">
-                    <p className="text-bio-teal font-semibold">IIT Bombay & Harvard</p>
+                    <p className="text-bio-teal font-semibold">Scientist </p>
                   </div>
                 </div>
               </div>
