@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ArrowRight, BrainCircuit, Flask, FileCheck, Scale, Cog, Rocket } from 'lucide-react';
+import { ArrowRight, BrainCircuit, FlaskConical, FileCheck, Scale, Cog, Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { TYPOGRAPHY, SPACING } from '@/constants/styles';
@@ -16,7 +16,7 @@ const CollaborationModels = () => {
       color: "from-bio-light-blue to-bio-blue"
     },
     {
-      icon: Flask,
+      icon: FlaskConical,
       title: "Contract Research & Process Dev",
       description: "Custom research and development services to solve your most challenging bioprocess problems. From lab-scale protocols to manufacturing optimization with proven methodologies.",
       color: "from-bio-teal to-bio-light-blue"

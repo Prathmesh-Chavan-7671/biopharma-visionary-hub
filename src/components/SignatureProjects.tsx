@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Flask, Database, FileCheck } from 'lucide-react';
+import { ArrowRight, FlaskConical, Database, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TYPOGRAPHY, SPACING } from '@/constants/styles';
 import { Button } from '@/components/ui/button';
@@ -11,7 +11,7 @@ const SignatureProjects = () => {
       title: "mRNA Process Development",
       client: "Serum Institute of India",
       description: "Developed scalable, cost-effective mRNA production protocol used in vaccine pipelines, resulting in 40% production cost reduction.",
-      icon: Flask,
+      icon: FlaskConical,
       color: "from-bio-light-blue to-bio-blue",
       image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80"
     },
