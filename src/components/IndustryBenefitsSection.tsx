@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Beaker, TrendingUp, Award, Clock, BarChart, Shield } from 'lucide-react';
+import { Beaker, TrendingUp, Award, Clock, BarChart, Shield, Zap, CheckCircle, Activity, RotateCcw } from 'lucide-react';
 
 const IndustryBenefitsSection = () => {
   const benefits = [
@@ -42,12 +42,78 @@ const IndustryBenefitsSection = () => {
     }
   ];
 
+  const achievements = [
+    { 
+      metric: "40%", 
+      label: "Reduced Development Time", 
+      icon: Clock,
+      color: "bio-blue" 
+    },
+    { 
+      metric: "65%", 
+      label: "Higher Success Rate", 
+      icon: CheckCircle,
+      color: "bio-teal" 
+    },
+    { 
+      metric: "10+", 
+      label: "Technology Transfers", 
+      icon: RotateCcw,
+      color: "bio-light-blue" 
+    },
+    { 
+      metric: "$50M+", 
+      label: "Revenue Generated", 
+      icon: Zap,
+      color: "bio-teal" 
+    },
+    { 
+      metric: "20+", 
+      label: "Industry Partnerships", 
+      icon: TrendingUp,
+      color: "bio-blue" 
+    },
+    { 
+      metric: "30+", 
+      label: "Patent Applications", 
+      icon: Activity,
+      color: "bio-light-blue" 
+    },
+  ];
+
   return (
     <section className="py-20 bg-gradient-to-b from-black to-bio-navy/90 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIHN0cm9rZT0icmdiYSgxNCwgMTY1LCAyMzMsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41IiBkPSJNLjUuNWg2MHY2MGgtNjB6Ii8+PHBhdGggZmlsbD0icmdiYSgxNCwgMTY1LCAyMzMsIDAuMDQpIiBkPSJNMzAgMzBoMzB2MzBoLTMweiIvPjwvZz48L3N2Zz4=')] opacity-10"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Key Metrics Section */}
+        <div className="mb-20">
+          <div className="text-center mb-10">
+            <div className="inline-block px-4 py-1.5 bg-bio-blue/10 border border-bio-blue/20 rounded-full mb-4">
+              <span className="text-bio-light-blue text-sm font-medium">Proven Track Record</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="text-gradient bg-gradient-to-r from-bio-light-blue to-bio-blue bg-clip-text text-transparent">Measurable Impact</span> for Industry Partners
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {achievements.map((item, index) => (
+              <div 
+                key={index}
+                className="bg-black/40 backdrop-blur-sm border border-bio-blue/20 rounded-xl p-4 flex flex-col items-center justify-center hover:border-bio-blue/40 transition-all duration-300 hover:shadow-[0_0_15px_rgba(14,165,233,0.15)]"
+              >
+                <div className={`h-12 w-12 rounded-full bg-${item.color}/10 flex items-center justify-center mb-3`}>
+                  <item.icon className={`h-6 w-6 text-${item.color}`} />
+                </div>
+                <div className="text-2xl font-bold text-white mb-1">{item.metric}</div>
+                <div className="text-gray-300 text-sm text-center">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1.5 bg-bio-blue/10 border border-bio-blue/20 rounded-full mb-4">
             <span className="text-bio-light-blue text-sm font-medium">Industry Advantages</span>

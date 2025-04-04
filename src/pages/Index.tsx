@@ -4,8 +4,12 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import IndustryBenefitsSection from '@/components/IndustryBenefitsSection';
-import EnhancedFeaturedProjects from '@/components/EnhancedFeaturedProjects';
-import ExpertiseHighlights from '@/components/ExpertiseHighlights';
+import SignatureProjects from '@/components/SignatureProjects';
+import CollaborationModels from '@/components/CollaborationModels';
+import SpeakingHighlights from '@/components/SpeakingHighlights';
+import StartupInnovation from '@/components/StartupInnovation';
+import PublicationsMedia from '@/components/PublicationsMedia';
+import PartnerTestimonials from '@/components/PartnerTestimonials';
 import SitePreview from '@/components/SitePreview';
 import ContactCTA from '@/components/ContactCTA';
 
@@ -16,8 +20,12 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <IndustryBenefitsSection />
-        <EnhancedFeaturedProjects />
-        <ExpertiseHighlights />
+        <SignatureProjects />
+        <CollaborationModels />
+        <SpeakingHighlights />
+        <StartupInnovation />
+        <PublicationsMedia />
+        <PartnerTestimonials />
         <SitePreview />
         <ContactCTA />
       </main>
