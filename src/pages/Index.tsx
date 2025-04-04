@@ -2,27 +2,19 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import HeroIndustry from '@/components/HeroIndustry';
-import ResearchSection from '@/components/ResearchSection';
-import SpeakingSection from '@/components/SpeakingSection';
+import HeroSection from '@/components/HeroSection';
+import FeaturedProjects from '@/components/FeaturedProjects';
+import SitePreview from '@/components/SitePreview';
 import ContactCTA from '@/components/ContactCTA';
-import IndustrySolutions from '@/components/IndustrySolutions';
-import CollaborationSection from '@/components/CollaborationSection';
-import IndustryBenefits from '@/components/IndustryBenefits';
-import StartupSection from '@/components/StartupSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-black">
       <Header />
       <main className="flex-grow">
-        <HeroIndustry />
-        <IndustryBenefits />
-        <IndustrySolutions />
-        <ResearchSection />
-        <CollaborationSection />
-        <StartupSection />
-        <SpeakingSection />
+        <HeroSection />
+        <FeaturedProjects />
+        <SitePreview />
         <ContactCTA />
       </main>
       <Footer />

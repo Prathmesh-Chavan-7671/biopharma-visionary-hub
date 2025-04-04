@@ -11,6 +11,7 @@ import Consulting from "./pages/Consulting";
 import Speaking from "./pages/Speaking";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Media from "./pages/Media";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -36,6 +37,7 @@ function App() {
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/speaking" element={<Speaking />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/media" element={<Media />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

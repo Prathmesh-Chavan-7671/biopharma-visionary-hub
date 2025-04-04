@@ -141,7 +141,7 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-bio-light-blue via-bio-teal to-bio-blue;
+    @apply bg-clip-text text-transparent;
   }
   
   .hover-scale {
@@ -355,4 +355,17 @@
 
 .animation-exit {
   animation: fade-out 0.3s ease-out, scale-out 0.2s ease-out;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
 }
