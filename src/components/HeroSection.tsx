@@ -151,7 +151,7 @@ const HeroSection = () => {
                     style={{ animationDuration: '20s', animationDirection: 'reverse', width: '140%', height: '140%', top: '-20%', left: '-20%' }}></div>
                   
                   <img 
-                    src={MEDIA_ASSETS.profileImage} 
+                    src="/images/Dr. Ratnesh Jain.png" 
                     alt="Dr. Ratnesh Jain" 
                     className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white/10"
                   />
