@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm border-b border-bio-light-blue/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
@@ -25,7 +25,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-bio-gray hover:text-bio-blue hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-bio-blue"
+              className="inline-flex items-center justify-center p-2 rounded-md text-bio-gray hover:text-bio-blue hover:bg-bio-light-blue/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-bio-blue"
               onClick={toggleMenu}
             >
               <span className="sr-only">Open main menu</span>
@@ -45,7 +45,7 @@ const Header = () => {
             <Link to="/consulting" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Consulting</Link>
             <Link to="/speaking" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Speaking</Link>
             <Link to="/contact" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Contact</Link>
-            <Button className="cta-button">Schedule a Consultation</Button>
+            <Button className="bg-bio-blue hover:bg-bio-teal text-white">Schedule a Consultation</Button>
           </nav>
         </div>
       </div>
@@ -61,7 +61,7 @@ const Header = () => {
             <Link to="/speaking" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Speaking</Link>
             <Link to="/contact" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Contact</Link>
             <div className="mt-4 px-3">
-              <Button className="cta-button w-full">Schedule a Consultation</Button>
+              <Button className="bg-bio-blue hover:bg-bio-teal text-white w-full">Schedule a Consultation</Button>
             </div>
           </div>
         </div>

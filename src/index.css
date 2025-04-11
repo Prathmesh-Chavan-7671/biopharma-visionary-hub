@@ -92,7 +92,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bio-off-white text-foreground;
     font-family: 'Inter', sans-serif;
   }
 }
@@ -103,19 +103,19 @@
   }
   
   .glassmorphism {
-    @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-xl;
+    @apply bg-white/80 backdrop-blur-sm border border-bio-light-blue/20 rounded-xl shadow-sm;
   }
   
   .interactive-card {
-    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(14,165,233,0.3)];
+    @apply transform transition-all duration-300 hover:scale-102 hover:shadow-md;
   }
   
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-16 md:py-24;
   }
   
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-bio-light-blue via-bio-teal to-bio-blue;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-bio-navy;
   }
   
   .section-subheading {
@@ -127,19 +127,19 @@
   }
   
   .cta-button {
-    @apply inline-flex items-center justify-center rounded-md bg-bio-blue px-5 py-2.5 text-white hover:bg-bio-teal transition-colors shadow-md hover:shadow-lg font-medium focus:outline-none focus:ring-2 focus:ring-bio-blue focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-md bg-bio-blue px-5 py-2.5 text-white hover:bg-bio-teal transition-colors shadow-sm hover:shadow-md font-medium focus:outline-none focus:ring-2 focus:ring-bio-blue focus:ring-offset-2;
   }
   
   .secondary-button {
-    @apply inline-flex items-center justify-center rounded-md bg-white border border-bio-blue px-5 py-2.5 text-bio-blue hover:bg-bio-light-blue hover:text-bio-navy transition-colors shadow-sm hover:shadow-md font-medium focus:outline-none focus:ring-2 focus:ring-bio-blue focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-md bg-white border border-bio-blue/30 px-5 py-2.5 text-bio-blue hover:bg-bio-light-blue/20 transition-colors shadow-sm hover:shadow-md font-medium focus:outline-none focus:ring-2 focus:ring-bio-blue focus:ring-offset-2;
   }
   
   .card {
-    @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6;
+    @apply bg-white border border-bio-light-blue/20 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6;
   }
   
-  .glassmorphism-blue {
-    @apply bg-bio-blue/10 backdrop-blur-xl border border-bio-blue/20 rounded-lg;
+  .neo-glassmorphism {
+    @apply bg-white/90 backdrop-blur-sm border border-bio-light-blue/30 rounded-lg shadow-sm;
   }
   
   .text-gradient {
@@ -150,70 +150,12 @@
     @apply transition-transform duration-300 hover:scale-105;
   }
   
-  .neon-glow {
-    @apply shadow-[0_0_15px_rgba(14,165,233,0.5)];
+  .blue-glow {
+    @apply shadow-[0_0_10px_rgba(14,165,233,0.3)];
   }
   
-  .neon-pulse {
-    @apply animate-[pulse_3s_ease-in-out_infinite];
-  }
-}
-
-@layer utilities {
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-  
-  .animate-pulse-slow {
-    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  .animate-tilt {
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-  }
-  
-  .hover-underline-animation {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .hover-underline-animation::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, theme('colors.bio.light-blue'), theme('colors.bio.teal'));
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-  }
-  
-  .hover-underline-animation:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  .text-gradient-soft-blue {
-    @apply bg-gradient-to-r from-bio-light-blue via-bio-blue to-bio-teal bg-clip-text text-transparent;
-  }
-
-  .bg-soft-blue {
-    @apply bg-gradient-to-b from-light-blue-50 to-bio-light-blue/30;
+  .subtle-pulse {
+    @apply animate-[pulse_4s_ease-in-out_infinite];
   }
 }
 

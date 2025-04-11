@@ -15,7 +15,7 @@ import ContactCTA from '@/components/ContactCTA';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-light-blue-50">
+    <div className="min-h-screen flex flex-col bg-bio-off-white">
       <Header />
       <main className="flex-grow">
         <HeroSection />
