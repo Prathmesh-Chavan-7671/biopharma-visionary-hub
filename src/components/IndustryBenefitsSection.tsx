@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Beaker, TrendingUp, Award, Clock, BarChart, Shield, Zap, CheckCircle, Activity, RotateCcw } from 'lucide-react';
+import { Beaker, TrendingUp, Award, Clock, BarChart, Shield, Zap, CheckCircle, Activity, RotateCcw, Users, FileText } from 'lucide-react';
 
 const IndustryBenefitsSection = () => {
   const benefits = [
@@ -19,7 +19,7 @@ const IndustryBenefitsSection = () => {
     {
       icon: Award,
       title: "Regulatory Navigation",
-      description: "90% success rate in regulatory approvals with compliant-by-design development approaches.",
+      description: "90% success rate for regulatory approvals with in-house designed methods for early drug development stages.",
       color: "from-bio-light-blue to-bio-blue"
     },
     {
@@ -31,14 +31,20 @@ const IndustryBenefitsSection = () => {
     {
       icon: BarChart,
       title: "Cost Optimization",
-      description: "Achieve 25-35% cost reduction in manufacturing through process optimization.",
+      description: "Get your product analysed at lower costs. Customised quotations available as per requirements.",
       color: "from-bio-teal to-bio-blue"
     },
     {
-      icon: Shield,
-      title: "Intellectual Property Strategy",
-      description: "Develop robust patent portfolios with 30+ successful patent applications expertise.",
+      icon: FileText,
+      title: "Quality Policy",
+      description: "Well designed quality policy in place to cater to your GLP requirements.",
       color: "from-bio-light-blue to-bio-teal"
+    },
+    {
+      icon: Users,
+      title: "Skilled Team",
+      description: "A team of highly skilled Subject matter experts to cater to any client queries. Quick response.",
+      color: "from-bio-blue to-bio-light-blue"
     }
   ];
 

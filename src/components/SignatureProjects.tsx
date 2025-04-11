@@ -44,7 +44,7 @@ const SignatureProjects = () => {
             <span className="text-bio-light-blue text-sm font-medium">Signature Projects</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            <span className="text-gradient bg-gradient-to-r from-bio-light-blue via-bio-teal to-bio-blue bg-clip-text text-transparent">Show, Don't Just Tell</span>
+            <span className="text-gradient bg-gradient-to-r from-bio-light-blue via-bio-teal to-bio-blue bg-clip-text text-transparent">HEAR FROM OUR CLIENTS</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Discover how Dr. Jain's scientific expertise translates into measurable industry outcomes.
