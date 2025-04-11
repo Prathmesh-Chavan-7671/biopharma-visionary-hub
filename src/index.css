@@ -42,6 +42,8 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    color-scheme: light;
   }
 
   .dark {
@@ -204,6 +206,14 @@
   .hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+  .text-gradient-soft-blue {
+    @apply bg-gradient-to-r from-bio-light-blue via-bio-blue to-bio-teal bg-clip-text text-transparent;
+  }
+
+  .bg-soft-blue {
+    @apply bg-gradient-to-b from-light-blue-50 to-bio-light-blue/30;
   }
 }
 
