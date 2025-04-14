@@ -5,20 +5,36 @@ import { Button } from '@/components/ui/button';
 
 const upcomingEvents = [
   {
-    title: "Future Medicine Summit 2025",
-    date: "May 18-20, 2025",
-    location: "Boston, MA",
-    topic: "Next-Generation mRNA Delivery Systems"
+    title: "European BioInnovation Forum 2025",
+    date: "June 5-7, 2025",
+    location: "Vienna, Austria",
+    topic: "Advancements in Targeted Drug Delivery Systems"
   },
   {
-    title: "Global Biotech Innovation Conference",
-    date: "July 12-14, 2025",
-    location: "San Francisco, CA",
-    topic: "Bridging Academia and Industry: Lessons from a Decade of Partnerships"
+    title: "Asia-Pacific Pharmaceutical Congress",
+    date: "August 10-12, 2025",
+    location: "Singapore",
+    topic: "Bridging East-West Pharmaceutical Innovation: Collaborative Models"
+  },
+  {
+    title: "BioTech Leadership Summit 2025",
+    date: "October 22-24, 2025",
+    location: "San Diego, CA",
+    topic: "The Future of mRNA Delivery Technologies"
   }
 ];
 
 const pastEvents = [
+  {
+    title: "Future Medicine Summit 2025",
+    year: "2025",
+    topic: "Next-Generation mRNA Delivery Systems"
+  },
+  {
+    title: "Global Biotech Innovation Conference",
+    year: "2025",
+    topic: "Bridging Academia and Industry: Lessons from a Decade of Partnerships"
+  },
   {
     title: "BioTech Summit 2024",
     year: "2024",
@@ -37,9 +53,10 @@ const pastEvents = [
 ];
 
 const recognitions = [
-  "Keynote Speaker at 24+ Industry Forums",
+  "Keynote Speaker at 30+ Industry Forums",
   "Innovation Award, International Pharmaceutical Federation",
-  "Distinguished Industry Collaborator, Biotech Association of India"
+  "Distinguished Industry Collaborator, Biotech Association of India",
+  "Scientific Advisor of the Year, BioProcess International, 2024"
 ];
 
 const SpeakingSection = () => {

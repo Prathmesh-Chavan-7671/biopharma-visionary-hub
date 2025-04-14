@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Brain, Atom, Rocket, MessageCircle, Circle, Square } from 'lucide-react';
+import { ArrowRight, Brain, Atom, Rocket, MessageCircle, Circle, Square, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -8,6 +8,15 @@ const SitePreview = () => {
   const sections = [
     {
       id: 1,
+      title: "About Me",
+      description: "Learn more about my background, expertise, and professional journey in biopharmaceutical innovation.",
+      icon: User,
+      color: "from-bio-blue/20 to-bio-blue/5",
+      borderColor: "bio-blue",
+      link: "/about"
+    },
+    {
+      id: 2,
       title: "Consulting",
       description: "Strategic consulting for pharmaceutical & biotech companies to accelerate R&D and optimize processes.",
       icon: Brain,
@@ -16,7 +25,7 @@ const SitePreview = () => {
       link: "/consulting"
     },
     {
-      id: 2,
+      id: 3,
       title: "Research",
       description: "Pioneering research in drug delivery systems, bioprocess engineering, and pharmaceutical nanotechnology.",
       icon: Atom,
@@ -25,7 +34,7 @@ const SitePreview = () => {
       link: "/research"
     },
     {
-      id: 3,
+      id: 4,
       title: "Startups",
       description: "Supporting biotech startups with scientific expertise, mentorship, and technology development.",
       icon: Rocket,
@@ -34,7 +43,7 @@ const SitePreview = () => {
       link: "/startups"
     },
     {
-      id: 4,
+      id: 5,
       title: "Collaborations",
       description: "Strategic partnerships with industry leaders to develop next-generation therapeutics and technologies.",
       icon: Circle,
@@ -43,7 +52,7 @@ const SitePreview = () => {
       link: "/collaborations"
     },
     {
-      id: 5,
+      id: 6,
       title: "Speaking",
       description: "Expert insights on pharmaceutical innovation, drug delivery, and industry-academia partnerships.",
       icon: MessageCircle, 
@@ -52,7 +61,7 @@ const SitePreview = () => {
       link: "/speaking"
     },
     {
-      id: 6,
+      id: 7,
       title: "Media",
       description: "Featured in leading scientific publications and media outlets for groundbreaking research and insights.",
       icon: Square,

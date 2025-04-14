@@ -40,6 +40,7 @@ const Header = () => {
           {/* Desktop menu */}
           <nav className="hidden md:flex md:items-center md:space-x-8">
             <Link to="/" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Home</Link>
+            <Link to="/about" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">About</Link>
             <Link to="/research" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Research</Link>
             <Link to="/collaborations" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Collaborations</Link>
             <Link to="/consulting" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Consulting</Link>
@@ -55,6 +56,7 @@ const Header = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
             <Link to="/" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Home</Link>
+            <Link to="/about" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">About</Link>
             <Link to="/research" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Research</Link>
             <Link to="/collaborations" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Collaborations</Link>
             <Link to="/consulting" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Consulting</Link>
