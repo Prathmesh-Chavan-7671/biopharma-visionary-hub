@@ -5,24 +5,24 @@ import { Button } from '@/components/ui/button';
 
 const upcomingEvents = [
   {
-    title: "BioTech Summit 2023",
-    date: "November 15-17, 2023",
+    title: "Future Medicine Summit 2025",
+    date: "May 18-20, 2025",
     location: "Boston, MA",
-    topic: "Nanomedicine: Bridging the Gap Between Academia and Industry"
+    topic: "Next-Generation mRNA Delivery Systems"
   },
   {
-    title: "Pharmaceutical Innovation Conference",
-    date: "January 22-24, 2024",
+    title: "Global Biotech Innovation Conference",
+    date: "July 12-14, 2025",
     location: "San Francisco, CA",
-    topic: "The Future of 3D Bioprinting in Drug Development"
+    topic: "Bridging Academia and Industry: Lessons from a Decade of Partnerships"
   }
 ];
 
 const pastEvents = [
   {
-    title: "Global Drug Delivery Symposium",
-    year: "2023",
-    topic: "Advanced Nanocarriers for Targeted Cancer Therapies"
+    title: "BioTech Summit 2024",
+    year: "2024",
+    topic: "Nanomedicine: Bridging the Gap Between Academia and Industry"
   },
   {
     title: "International Biotech Congress",

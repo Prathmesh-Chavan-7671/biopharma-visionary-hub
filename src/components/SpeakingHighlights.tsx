@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 const SpeakingHighlights = () => {
   const featuredTalk = {
     title: "The Future of mRNA Therapeutics: Challenges & Opportunities",
-    event: "BioAsia 2024",
+    event: "Future Medicine Summit 2025",
     description: "Keynote addressing next-generation mRNA platform technologies and their application in personalized medicine beyond vaccines.",
     image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1600&q=80"
   };
@@ -76,7 +76,7 @@ const SpeakingHighlights = () => {
               <p className="text-gray-300 mb-6">{featuredTalk.description}</p>
               
               <Link to="/speaking" className="inline-flex items-center text-bio-light-blue hover:text-bio-blue transition-colors group/link">
-                <span>Watch Full Keynote</span>
+                <span>Learn More</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
               </Link>
             </div>
@@ -103,29 +103,29 @@ const SpeakingHighlights = () => {
             </div>
             
             <div className="bg-black/40 backdrop-blur-md border border-bio-blue/20 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-white mb-6">Previous Speaking Engagements</h3>
+              <h3 className="text-xl font-semibold text-white mb-6">Upcoming Speaking Engagements</h3>
               
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-bio-teal text-sm">March 2024</span>
-                    <p className="text-white">International Bioprocessing Summit</p>
+                    <span className="text-bio-teal text-sm">May, 2025</span>
+                    <p className="text-white">Future Medicine Summit</p>
                   </div>
                   <ArrowRight className="h-4 w-4 text-bio-light-blue" />
                 </div>
                 
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-bio-teal text-sm">January 2024</span>
-                    <p className="text-white">Pharma Tech Expo</p>
+                    <span className="text-bio-teal text-sm">July, 2025</span>
+                    <p className="text-white">Global Biotech Innovation Conference</p>
                   </div>
                   <ArrowRight className="h-4 w-4 text-bio-light-blue" />
                 </div>
                 
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-bio-teal text-sm">November 2023</span>
-                    <p className="text-white">Global Healthcare Innovation Forum</p>
+                    <span className="text-bio-teal text-sm">October, 2025</span>
+                    <p className="text-white">International Pharmaceutical Forum</p>
                   </div>
                   <ArrowRight className="h-4 w-4 text-bio-light-blue" />
                 </div>

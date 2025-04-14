@@ -8,27 +8,27 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 const upcomingEvents = [
   {
-    title: "BioTech Summit 2023",
-    date: "November 15-17, 2023",
+    title: "Future Medicine Summit 2025",
+    date: "May 18-20, 2025",
     location: "Boston, MA",
-    topic: "Nanomedicine: Bridging the Gap Between Academia and Industry",
-    description: "Dr. Jain will deliver a keynote address on the latest advancements in nanomedicine and how academic research can be effectively translated into commercial applications.",
+    topic: "Next-Generation mRNA Delivery Systems",
+    description: "Dr. Jain will deliver a keynote address on recent breakthroughs in mRNA delivery technology and their implications for personalized medicine applications.",
     ticketUrl: "#"
   },
   {
-    title: "Pharmaceutical Innovation Conference",
-    date: "January 22-24, 2024",
+    title: "Global Biotech Innovation Conference",
+    date: "July 12-14, 2025",
     location: "San Francisco, CA",
-    topic: "The Future of 3D Bioprinting in Drug Development",
-    description: "A featured presentation on how 3D bioprinting technologies are revolutionizing drug discovery and development processes, with case studies from recent industry collaborations.",
+    topic: "Bridging Academia and Industry: Lessons from a Decade of Partnerships",
+    description: "A featured presentation on successful models for academic-industry collaboration in biotechnology, with case studies from Dr. Jain's experience.",
     ticketUrl: "#"
   },
   {
-    title: "Global Healthcare Innovations Forum",
-    date: "March 8-10, 2024",
-    location: "London, UK",
-    topic: "Next-Generation Drug Delivery Systems: From Concept to Clinic",
-    description: "Dr. Jain will lead a workshop on the development pathways for novel drug delivery systems, highlighting regulatory considerations and commercialization strategies.",
+    title: "International Pharmaceutical Forum",
+    date: "October 5-7, 2025",
+    location: "Singapore",
+    topic: "Sustainable Bioprocessing: Green Technologies for Future Manufacturing",
+    description: "Dr. Jain will lead a workshop on environmentally sustainable approaches to biopharmaceutical manufacturing, highlighting recent innovations from his research.",
     ticketUrl: "#"
   }
 ];
@@ -57,6 +57,26 @@ const speakingTopics = [
 ];
 
 const pastEvents = [
+  {
+    year: "2024",
+    events: [
+      {
+        title: "BioTech Summit 2024",
+        location: "Boston, USA",
+        topic: "Nanomedicine: Bridging the Gap Between Academia and Industry"
+      },
+      {
+        title: "Pharmaceutical Innovation Conference",
+        location: "San Francisco, USA",
+        topic: "The Future of 3D Bioprinting in Drug Development"
+      },
+      {
+        title: "Global Healthcare Innovations Forum",
+        location: "London, UK",
+        topic: "Next-Generation Drug Delivery Systems: From Concept to Clinic"
+      }
+    ]
+  },
   {
     year: "2023",
     events: [
@@ -89,21 +109,6 @@ const pastEvents = [
         title: "Pharmaceutical Sciences Summit",
         location: "Toronto, Canada",
         topic: "Novel Approaches to Drug Formulation and Delivery"
-      }
-    ]
-  },
-  {
-    year: "2021",
-    events: [
-      {
-        title: "Regenerative Medicine Conference",
-        location: "Barcelona, Spain",
-        topic: "Biomaterials for Tissue Engineering Applications"
-      },
-      {
-        title: "Biopharmaceutical Development Symposium",
-        location: "San Diego, USA",
-        topic: "Industry-Academia Partnerships in Drug Development"
       }
     ]
   }
