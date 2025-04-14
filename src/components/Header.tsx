@@ -44,7 +44,9 @@ const Header = () => {
             <Link to="/research" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Research</Link>
             <Link to="/collaborations" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Collaborations</Link>
             <Link to="/consulting" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Consulting</Link>
+            <Link to="/startups" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Startups</Link>
             <Link to="/speaking" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Speaking</Link>
+            <Link to="/media" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Media</Link>
             <Link to="/contact" className="text-bio-gray hover:text-bio-blue font-medium transition-colors">Contact</Link>
             <Button className="bg-bio-blue hover:bg-bio-teal text-white">Schedule a Consultation</Button>
           </nav>
@@ -60,7 +62,9 @@ const Header = () => {
             <Link to="/research" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Research</Link>
             <Link to="/collaborations" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Collaborations</Link>
             <Link to="/consulting" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Consulting</Link>
+            <Link to="/startups" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Startups</Link>
             <Link to="/speaking" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Speaking</Link>
+            <Link to="/media" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Media</Link>
             <Link to="/contact" className="block px-3 py-2 text-bio-gray hover:text-bio-blue font-medium transition-colors">Contact</Link>
             <div className="mt-4 px-3">
               <Button className="bg-bio-blue hover:bg-bio-teal text-white w-full">Schedule a Consultation</Button>
