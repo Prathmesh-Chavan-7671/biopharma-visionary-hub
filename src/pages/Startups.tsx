@@ -1,8 +1,7 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { ArrowRight, Rocket, LightBulb, Microscope, Users, CheckCircle, Calendar } from 'lucide-react';
+import { ArrowRight, Rocket, Lightbulb, Microscope, Users, CheckCircle, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Startups = () => {
@@ -15,7 +14,7 @@ const Startups = () => {
     {
       title: "Technology Development",
       description: "Collaborative development of novel drug delivery systems and bioprocess technologies.",
-      icon: LightBulb
+      icon: Lightbulb
     },
     {
       title: "Mentorship",
