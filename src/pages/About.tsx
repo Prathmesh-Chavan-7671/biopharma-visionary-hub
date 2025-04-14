@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BookOpen, Award, Briefcase, GraduationCap, Users, FileText, ArrowRight, MessageCircle, Globe, Bookmark, BookMarked, Brain, Atom, Book, Citation, Library, School } from 'lucide-react';
+import { BookOpen, Award, Briefcase, GraduationCap, Users, FileText, ArrowRight, MessageCircle, Globe, Bookmark, BookMarked, Brain, Atom, Book, Library, School } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
