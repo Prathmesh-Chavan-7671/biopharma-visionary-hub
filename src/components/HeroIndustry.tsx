@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MEDIA_ASSETS } from '@/constants/media';
-import { ArrowRight, Award, FileText, FlaskConical } from 'lucide-react';
+import { ArrowRight, Award, FileText, FlaskConical, Brain, Dna } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const HeroIndustry = () => {
