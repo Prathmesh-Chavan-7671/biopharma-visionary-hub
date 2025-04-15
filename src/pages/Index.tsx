@@ -15,6 +15,7 @@ import PartnerShowcase from '@/components/PartnerShowcase';
 import IndustrySolutions from '@/components/IndustrySolutions';
 import ContactCTA from '@/components/ContactCTA';
 import ExpertiseHighlights from '@/components/ExpertiseHighlights';
+import ConsultancyProjects from '@/components/ConsultancyProjects';
 
 const Index = () => {
   return (
@@ -25,6 +26,7 @@ const Index = () => {
         <IndustryStats />
         <IndustryBenefitsSection />
         <EnhancedFeaturedProjects />
+        <ConsultancyProjects />
         <IndustrySolutions />
         <ExpertiseHighlights />
         <CollaborationModels />
