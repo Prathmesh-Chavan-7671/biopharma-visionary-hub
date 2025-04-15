@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MEDIA_ASSETS } from '@/constants/media';
-import { ArrowRight, Calendar, Lightbulb, Flask, Award, FileText } from 'lucide-react';
+import { ArrowRight, Award, FileText, Beaker } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const HeroIndustry = () => {
@@ -38,7 +37,7 @@ const HeroIndustry = () => {
             <div className="flex flex-wrap gap-4 lg:gap-8">
               <div className="flex items-center">
                 <div className="h-10 w-10 rounded-lg bg-bio-blue/20 flex items-center justify-center mr-3">
-                  <Flask className="h-5 w-5 text-bio-light-blue" />
+                  <Beaker className="h-5 w-5 text-bio-light-blue" />
                 </div>
                 <div>
                   <p className="text-white font-medium">20+ Years</p>
