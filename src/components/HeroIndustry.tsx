@@ -2,8 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MEDIA_ASSETS } from '@/constants/media';
-import { ArrowRight, Award, FileText, FlaskConical, Brain, Dna } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Calendar, Lightbulb, MessageSquare } from 'lucide-react';
 
 const HeroIndustry = () => {
   return (
@@ -17,28 +16,38 @@ const HeroIndustry = () => {
             {/* Premium badge */}
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-bio-blue/10 border border-bio-blue/20">
               <span className="flex h-2 w-2 rounded-full bg-bio-blue mr-2"></span>
-              <span className="text-bio-light-blue text-sm font-medium">Industry Consulting</span>
+              <span className="text-bio-light-blue text-sm font-medium">Biopharmaceutical Consulting</span>
             </div>
             
             <div>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Dr. Ratnesh Jain
                 <span className="block mt-3 text-3xl font-light text-gray-300">
-                  <span className="text-bio-teal font-medium">Innovating</span> Biopharmaceutical Solutions
+                  Transforming <span className="text-bio-teal font-medium">Biopharmaceutical</span> Innovation
                 </span>
               </h1>
               
               <p className="text-xl text-gray-300 max-w-xl">
-                Empowering pharmaceutical companies with 
-                <span className="text-bio-light-blue"> strategic consulting </span> 
-                to optimize processes, reduce development costs, and accelerate time-to-market.
+                Leading expert in pharmaceutical sciences with a proven record of
+                <span className="text-bio-light-blue"> accelerating industry R&D </span> 
+                and delivering breakthrough solutions.
               </p>
             </div>
             
             <div className="flex flex-wrap gap-4 lg:gap-8">
               <div className="flex items-center">
                 <div className="h-10 w-10 rounded-lg bg-bio-blue/20 flex items-center justify-center mr-3">
-                  <FlaskConical className="h-5 w-5 text-bio-light-blue" />
+                  <Lightbulb className="h-5 w-5 text-bio-light-blue" />
+                </div>
+                <div>
+                  <p className="text-white font-medium">30+ Patents</p>
+                  <p className="text-gray-400 text-sm">Filed & Granted</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-lg bg-bio-blue/20 flex items-center justify-center mr-3">
+                  <Calendar className="h-5 w-5 text-bio-light-blue" />
                 </div>
                 <div>
                   <p className="text-white font-medium">20+ Years</p>
@@ -48,40 +57,26 @@ const HeroIndustry = () => {
               
               <div className="flex items-center">
                 <div className="h-10 w-10 rounded-lg bg-bio-blue/20 flex items-center justify-center mr-3">
-                  <Award className="h-5 w-5 text-bio-light-blue" />
+                  <MessageSquare className="h-5 w-5 text-bio-light-blue" />
                 </div>
                 <div>
                   <p className="text-white font-medium">50+ Companies</p>
                   <p className="text-gray-400 text-sm">Successfully Partnered</p>
                 </div>
               </div>
-              
-              <div className="flex items-center">
-                <div className="h-10 w-10 rounded-lg bg-bio-blue/20 flex items-center justify-center mr-3">
-                  <FileText className="h-5 w-5 text-bio-light-blue" />
-                </div>
-                <div>
-                  <p className="text-white font-medium">30+ Patents</p>
-                  <p className="text-gray-400 text-sm">Industry Applications</p>
-                </div>
-              </div>
             </div>
             
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link to="/consulting">
-                <Button className="rounded-md bg-bio-blue hover:bg-bio-teal text-white px-6 py-6 group">
-                  <span className="flex items-center">
-                    Schedule a Consultation
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
-              </Link>
+              <Button className="rounded-md bg-bio-blue hover:bg-bio-teal text-white px-6 py-6 group">
+                <span className="flex items-center">
+                  Schedule a Consultation
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Button>
               
-              <Link to="/consulting#case-studies">
-                <Button variant="outline" className="rounded-md border-bio-blue/30 text-bio-light-blue hover:bg-bio-blue/10">
-                  View Case Studies
-                </Button>
-              </Link>
+              <Button variant="outline" className="rounded-md border-bio-blue/30 text-bio-light-blue hover:bg-bio-blue/10">
+                View Case Studies
+              </Button>
             </div>
           </div>
           
@@ -100,11 +95,11 @@ const HeroIndustry = () => {
               
               {/* Stats cards positioned around the image */}
               <div className="absolute -top-6 -left-6 bg-black/70 backdrop-blur-md border border-white/10 rounded-lg p-3 shadow-lg">
-                <p className="text-bio-light-blue font-semibold">40+ Industry Partners</p>
+                <p className="text-bio-light-blue font-semibold">130+ Publications</p>
               </div>
               
               <div className="absolute -bottom-6 -right-6 bg-black/70 backdrop-blur-md border border-white/10 rounded-lg p-3 shadow-lg">
-                <p className="text-bio-teal font-semibold">$20M+ Industry Impact</p>
+                <p className="text-bio-teal font-semibold">IIT Bombay & Harvard</p>
               </div>
             </div>
           </div>

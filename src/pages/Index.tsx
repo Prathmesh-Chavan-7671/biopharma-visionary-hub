@@ -2,38 +2,30 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import HeroIndustry from '@/components/HeroIndustry';
+import HeroSection from '@/components/HeroSection';
 import IndustryBenefitsSection from '@/components/IndustryBenefitsSection';
-import EnhancedFeaturedProjects from '@/components/EnhancedFeaturedProjects';
+import SignatureProjects from '@/components/SignatureProjects';
 import CollaborationModels from '@/components/CollaborationModels';
 import SpeakingHighlights from '@/components/SpeakingHighlights';
 import StartupInnovation from '@/components/StartupInnovation';
 import PublicationsMedia from '@/components/PublicationsMedia';
-import IndustryStats from '@/components/IndustryStats';
+import PartnerTestimonials from '@/components/PartnerTestimonials';
 import SitePreview from '@/components/SitePreview';
-import PartnerShowcase from '@/components/PartnerShowcase';
-import IndustrySolutions from '@/components/IndustrySolutions';
 import ContactCTA from '@/components/ContactCTA';
-import ExpertiseHighlights from '@/components/ExpertiseHighlights';
-import ConsultancyProjects from '@/components/ConsultancyProjects';
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-bio-off-white">
       <Header />
       <main className="flex-grow">
-        <HeroIndustry />
-        <IndustryStats />
+        <HeroSection />
         <IndustryBenefitsSection />
-        <EnhancedFeaturedProjects />
-        <ConsultancyProjects />
-        <IndustrySolutions />
-        <ExpertiseHighlights />
+        <SignatureProjects />
         <CollaborationModels />
         <SpeakingHighlights />
         <StartupInnovation />
         <PublicationsMedia />
-        <PartnerShowcase />
+        <PartnerTestimonials />
         <SitePreview />
         <ContactCTA />
       </main>
