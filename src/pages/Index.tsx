@@ -12,6 +12,7 @@ import PublicationsMedia from '@/components/PublicationsMedia';
 import PartnerTestimonials from '@/components/PartnerTestimonials';
 import SitePreview from '@/components/SitePreview';
 import ContactCTA from '@/components/ContactCTA';
+import ConsultancyProjects from '@/components/ConsultancyProjects';
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
         <HeroSection />
         <IndustryBenefitsSection />
         <SignatureProjects />
+        <ConsultancyProjects />
         <CollaborationModels />
         <SpeakingHighlights />
         <StartupInnovation />

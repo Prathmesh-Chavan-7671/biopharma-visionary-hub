@@ -24,7 +24,32 @@ const PartnerTestimonials = () => {
     }
   ];
   
-  const partnerLogos = Array(6).fill(null);
+  const partnerLogos = [
+    {
+      name: "Mangalam Drug & Organics",
+      logo: "https://media.licdn.com/dms/image/C560BAQFKcEqgLYnN0A/company-logo_200_200/0/1630998900412?e=2147483647&v=beta&t=b1aaSCYJSJmYC9dW1H2-U5I3Pf_uyQIaENVpmJqRyuM"
+    },
+    {
+      name: "Advy Chemicals",
+      logo: "https://static.wixstatic.com/media/f3aacb_4c2831fa22e94e0ca7b94b3b5b4aeaf5~mv2.png/v1/fill/w_179,h_122,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/advy.png"
+    },
+    {
+      name: "Meteoric Biopharmaceuticals",
+      logo: "https://www.meteoric.net/images/Meteoric.jpg"
+    },
+    {
+      name: "Oncosimis Biotech",
+      logo: "https://oncosimis.com/wp-content/uploads/2023/01/cropped-Oncosimis-Logo-PNG-165x65.png"
+    },
+    {
+      name: "Serum Institute of India",
+      logo: "https://www.seruminstitute.com/images/logo.png"
+    },
+    {
+      name: "BDR Pharmaceuticals",
+      logo: "https://www.bdrpharma.com/static/images/logo-header.png"
+    }
+  ];
   
   return (
     <section className="py-24 bg-gradient-to-b from-black to-bio-navy/70 relative overflow-hidden">
@@ -72,12 +97,21 @@ const PartnerTestimonials = () => {
           <h3 className="text-2xl font-semibold text-white text-center mb-8">Industry Partners</h3>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-            {partnerLogos.map((_, index) => (
+            {partnerLogos.map((partner, index) => (
               <div 
                 key={index}
-                className="h-20 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center"
+                className="h-20 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center p-3"
               >
-                <div className="text-white font-medium">Partner Logo</div>
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="max-h-full max-w-full object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = "https://via.placeholder.com/150x60/1e293b/f8fafc?text=" + encodeURIComponent(partner.name);
+                  }}
+                />
               </div>
             ))}
           </div>
